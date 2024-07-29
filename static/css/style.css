@@ -1,0 +1,144 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(rgba(11, 80, 46, 1), rgba(25, 182, 104, 0.5));
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-container, .user-container {
+  width: 400px;
+  padding: 20px;
+  background: rgba(217, 217, 217, 0.2);
+  opacity: 1;
+  border: 1px solid rgba(11, 80, 46, 1);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.greeting {
+  color: rgba(255, 255, 255, 1);
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.input-container, .password-container {
+  width: 340px;
+  height: 50px;
+  background: rgba(217, 217, 217, 1);
+  opacity: 1;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+input {
+  border: none;
+  background-color: rgba(217, 217, 217, 1);
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+input:focus {
+  outline: none;
+}
+
+.button {
+  width: 340px;
+  height: 50px;
+  background: #0B502E;
+  border-radius: 15px;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  border: none;
+  color: rgba(255, 255, 255, 1);
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+#continue {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  color: black;
+}
+
+.Forget {
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  color: black;
+  margin-top: 15px;
+  width: 340px;
+}
+
+.eye {
+  width: 25px;
+  position: absolute;
+  right: 20px;
+}
+
+.cover {
+  width: 400px;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  top: 8rem;
+  right: 30%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+th, td {
+  padding: 1em;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #0B502E;
+  color: white;
+}
+
+td {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+}
+
+.container {
+  width: 400px;
+  padding: 20px;
+  background: rgba(217, 217, 217, 0.2);
+  border: 1px solid rgba(11, 80, 46, 1);
+  border-radius: 20px;
+  text-align: center;
+}

@@ -23,7 +23,7 @@ router.post('/signup', async(req, res, next) => {
   }
 });
 
-router.get('/login', async(req, res, next) => {
+router.put('/login', async(req, res, next) => {
   const {email, password} = req.body;
   const user = await User.findOne({email});
   if (!user){
@@ -36,8 +36,7 @@ router.get('/login', async(req, res, next) => {
   }
   else {
     const token = jwt.sign({id: user._id}, process.env.SECRETKEY, { expiresIn: '1h' });
-    console.log(token);
-    res.send(`Hello, ${user.name}`)
+    res.send({token});
   }
   
 });
