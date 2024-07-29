@@ -10,8 +10,8 @@ router.get('/', authenticate, async (req, res) => {
 
 router.post('/', authenticate, async (req, res, next) => {
 
-  const {title, user} = req.body;
-  const newTodo = new Todo({title, user});
+  const task = req.body;
+  const newTodo = new Todo(task);
   console.log(newTodo);
   try{
     await newTodo.save(); 

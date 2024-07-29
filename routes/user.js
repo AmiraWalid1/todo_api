@@ -3,6 +3,8 @@ const {User} = require('../models/user')
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const {authenticate} = require('../middlewares/authenticate')
+const {Registration} = require('../middlewares/userValidation');
+const { body,validationResult } = require('express-validator');
 const router = express.Router();
 
 router.get('/',authenticate, async(req, res) => {
@@ -11,10 +13,15 @@ router.get('/',authenticate, async(req, res) => {
 });
 
 
-router.post('/signup', async(req, res, next) => {
-  const {name, email, password} = req.body;
+router.post('/signup',Registration, async(req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty){
+    return res.status(400).json(errors);
+  }
+
+  const {name, email, password, type} = req.body;
   const passwordEncrypted = await bcryptjs.hash(password, 10);
-  const newUser = new User({name, email, password: passwordEncrypted});  
+  const newUser = new User({name, email, password: passwordEncrypted, type});  
   try{
     await newUser.save();
     res.status(201).send(newUser);
