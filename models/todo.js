@@ -5,10 +5,10 @@ const todoSchema = new mongoose.Schema({
   description: {type: String},
   completed: {type: Boolean, default: false},
   user: {type: mongoose.Schema.Types.ObjectId, ref: "user", required: true},
-  filePath: {type: String, required: false},
-  createdAt: {type: Date, default: Date.now}
-
-});
+  filePath: {type: String, required: false}
+  },
+  {timestamps:true}
+);
 
 const Todo = mongoose.model("todo", todoSchema);
 

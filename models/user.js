@@ -5,8 +5,9 @@ const userSchema = new Schema({
   email: {type: String, required: true, unique: true},
   password: {type: String, required: true},
   type: {type: String, required: true, default: 'user', enum: ['admin', 'user']},
-  createdAt: {type: Date, default: Date.now}
-});
+  },
+  {timestamps:true}
+);
 
 const User = model("user", userSchema);
 
